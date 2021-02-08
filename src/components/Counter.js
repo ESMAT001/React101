@@ -6,23 +6,21 @@ class Counter extends Component {
         this.state = {
             count: 0
         }
-        this.increment = this.increment.bind(this);
-        this.decrement = this.decrement.bind(this);
-        this.reset = this.reset.bind(this);
+
     }
-    increment() {
+    increment = () => {
         this.setState((prevState) => ({
             count: prevState.count + 1
         }))
     }
-    decrement() {
+    decrement = () => {
         this.setState((prevState) => ({
             count: prevState.count - 1
         }))
     }
-    reset() {
+    reset = () => {
         this.setState((prevState) => ({
-            count:0
+            count: 0
         }))
     }
     render() {
