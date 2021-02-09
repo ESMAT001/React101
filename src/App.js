@@ -3,6 +3,7 @@ import './App.css';
 import Counter from './components/Counter';
 import Form from './components/Form';
 import FormPeople from './components/FormPeople';
+import Api from './components/Api';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         {/* <Counter/> */}
         {/* <Form /> */}
-        <FormPeople />
+        {/* <FormPeople /> */}
+        <Api/>
       </header>
     </div>
   );
