@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import SearchBar from './SearchBar';
 import NavLinks from './NavLinks';
 import Photos from './Photos'
-export default class Api extends PureComponent {
+export default class PhotoSearch extends Component {
     constructor(props) {
         super(props)
 
