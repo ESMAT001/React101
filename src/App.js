@@ -6,15 +6,16 @@ import FormPeople from './components/FormPeople';
 import Api from './components/Api';
 
 function App() {
+  const cls="bg-gray-100"
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className={cls}>
+      {/* <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" /> */}
         {/* <Counter/> */}
         {/* <Form /> */}
         {/* <FormPeople /> */}
-        <Api/>
-      </header>
+      {/* </header> */}
+      <Api/>
     </div>
   );
 }
