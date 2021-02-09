@@ -28,13 +28,14 @@ class Form extends Component {
         })
     }
     render() {
+        const {email,username,option,show}=this.state;
         return (
             <form onSubmit={this.handleSubmit}>
-                {this.state.show && <p>Email : {this.state.email} option : {this.state.option}</p>}
-                <p>Username : {this.state.username}</p>
-                <input type="text" value={this.state.email} onChange={this.handleEmail} />
+                {show && <p>Email : {email} option : {option}</p>}
+                <p>Username : {username}</p>
+                <input type="text" value={email} onChange={this.handleEmail} />
                 <div>
-                    <select value={this.state.option} onChange={this.handleSelect}>
+                    <select value={option} onChange={this.handleSelect}>
                         <option value="1" >1</option>
                         <option value="2" >2</option>
                         <option value="3" >3</option>
