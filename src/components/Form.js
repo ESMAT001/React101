@@ -7,7 +7,8 @@ class Form extends Component {
         this.state = {
             email: '',
             username: 'Ahmad ',
-            option: '1'
+            option: '1',
+            show:false
         }
     }
     handleEmail = (e) => {
@@ -20,9 +21,16 @@ class Form extends Component {
             option:e.target.value
         })
     }
+    handleSubmit=e=>{
+        e.preventDefault();
+        this.setState({
+            show:true
+        })
+    }
     render() {
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}>
+                {this.state.show && <p>Email : {this.state.email} option : {this.state.option}</p>}
                 <p>Username : {this.state.username}</p>
                 <input type="text" value={this.state.email} onChange={this.handleEmail} />
                 <div>
@@ -32,6 +40,7 @@ class Form extends Component {
                         <option value="3" >3</option>
                     </select>
                 </div>
+                <button type="submit">submit</button>
             </form>
         )
     }
