@@ -27,12 +27,7 @@ export class FormPeople extends Component {
                 <input type="text" value={this.state.value} onChange={this.handleChange} />
                 <button onClick={this.handleAdd} >Add</button>
                 {
-
-                    this.state.people.map(
-                        (person, i) => {
-                            return <h3 key={i} >{person}</h3>;
-                        }
-                    )
+                    this.state.people.map((person, i) => <h3 key={i} >{person}</h3>)
                 }
             </React.Fragment>
         )
