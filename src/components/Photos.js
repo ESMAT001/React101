@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Modal from './Modal';
 
 export class Photos extends Component {
     constructor(props) {
@@ -34,16 +35,11 @@ export class Photos extends Component {
         console.log()
         return (
             <>
-                {modalShow && <div className={modalCls} onClick={this.closeModal}>
-                    <div className="w-9/12 mx-auto">
-                        <img
-                            className={"max-h-screen mx-auto cursor-pointer"}
-                            src={data[imgIndex].largeImageURL}
-                            alt={data[imgIndex].tags}
-                            onClick={e => { e.stopPropagation() }}
-                        />
-                    </div>
-                </div>
+                {modalShow && <Modal
+                    closeModal={this.closeModal}
+                    src={data[imgIndex].largeImageURL}
+                    alt={data[imgIndex].tags}
+                />
                 }
                 <div className={cls}>
                     {!data && <p className={pCls}>Loading...</p>}

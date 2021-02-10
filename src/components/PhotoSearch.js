@@ -9,7 +9,7 @@ export default class PhotoSearch extends Component {
         this.state = {
             key: "3287863-2a174c3f0b8d2206954c9df5a",
             q: "car",
-            navLinks: [ "backgrounds", "fashion", "nature", "science"," education", "feelings", "health", "people", "religion", "places", "animals", "industry", "computer","food", "sports"],
+            navLinks: [  "nature", "fashion","backgrounds", "science"," education", "feelings", "health", "people", "religion", "places", "animals", "industry", "computer","food", "sports"],
             data: false,
             maxImgReached:false
         }
