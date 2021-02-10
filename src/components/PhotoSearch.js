@@ -10,7 +10,8 @@ export default class PhotoSearch extends Component {
             key: "3287863-2a174c3f0b8d2206954c9df5a",
             q: "car",
             navLinks: ["car", 'sky', 'computer', 'moon', 'water', 'spiderman'],
-            data: false
+            data: false,
+            maxImgReached:false
         }
         this.inputRef = React.createRef();
     }
@@ -45,9 +46,11 @@ export default class PhotoSearch extends Component {
         if (num > 200) {
             let x = num - 200;
             num -= x;
+            this.setState({
+                maxImgReached:true
+            })
         }
-
-        this.fetchData();
+        this.fetchData(num);
     }
     handleNavLinks = (val) => {
         val = this.state.navLinks[val];
@@ -62,11 +65,12 @@ export default class PhotoSearch extends Component {
     }
     render() {
         const cls = "container mx-auto py-5";
+        const {data,maxImgReached}=this.state
         return (
             <div className={cls}>
                 <SearchBar ref={this.inputRef} handleSearch={this.handleSearch} />
                 <NavLinks navLinks={this.state.navLinks} handleNavLinks={this.handleNavLinks} />
-                <Photos data={this.state.data} handleLoadMore={this.handleLoadMore} />
+                <Photos data={data} handleLoadMore={this.handleLoadMore} maxImgReached={maxImgReached} />
             </div>
         )
     }
