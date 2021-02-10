@@ -9,7 +9,7 @@ export default class PhotoSearch extends Component {
         this.state = {
             key: "3287863-2a174c3f0b8d2206954c9df5a",
             q: "car",
-            navLinks: ["car", 'sky', 'computer'],
+            navLinks: ["car", 'sky', 'computer', 'moon', 'water', 'spiderman'],
             data: false
         }
         this.inputRef = React.createRef();
@@ -17,10 +17,10 @@ export default class PhotoSearch extends Component {
     componentDidMount = () => {
         this.fetchData();
     }
-    fetchData = async () => {
-        let data = await fetch(`https://pixabay.com/api/?key=${this.state.key}&q=${this.state.q}&image_type=photo`);
+    fetchData = async (perPage = 62) => {
+        let data = await fetch(`https://pixabay.com/api/?key=${this.state.key}&q=${this.state.q}&order=popular&per_page=${perPage}&image_type=photo`);
         data = await data.json();
-        // console.log(data.hits);
+        console.log(data);
         this.setState({
             data: data.hits
         })
@@ -40,6 +40,15 @@ export default class PhotoSearch extends Component {
             }
         }
     }
+    handleLoadMore = () => {
+        let num = this.state.data.length + 60;
+        if (num > 200) {
+            let x = num - 200;
+            num -= x;
+        }
+
+        this.fetchData();
+    }
     handleNavLinks = (val) => {
         val = this.state.navLinks[val];
         if (this.state.q !== val) {
@@ -57,10 +66,7 @@ export default class PhotoSearch extends Component {
             <div className={cls}>
                 <SearchBar ref={this.inputRef} handleSearch={this.handleSearch} />
                 <NavLinks navLinks={this.state.navLinks} handleNavLinks={this.handleNavLinks} />
-                <Photos data={this.state.data} />
-                <div>
-
-                </div>
+                <Photos data={this.state.data} handleLoadMore={this.handleLoadMore} />
             </div>
         )
     }

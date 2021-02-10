@@ -1,8 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
-import Counter from './components/Counter';
-import Form from './components/Form';
-import FormPeople from './components/FormPeople';
+// import logo from './logo.svg';
+// import './App.css';
+// import Counter from './components/Counter';
+// import Form from './components/Form';
+// import FormPeople from './components/FormPeople';
 import PhotoSearch from './components/PhotoSearch';
 
 function App() {
