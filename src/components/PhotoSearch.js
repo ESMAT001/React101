@@ -17,6 +17,7 @@ export default class PhotoSearch extends Component {
     }
     componentDidMount = () => {
         this.fetchData();
+        this.inputRef.current.focus();
     }
     fetchData = async (perPage = 62) => {
         let data = await fetch(`https://pixabay.com/api/?key=${this.state.key}&q=${this.state.q}&order=popular&per_page=${perPage}&image_type=photo`);
