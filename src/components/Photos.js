@@ -29,7 +29,6 @@ export class Photos extends Component {
         const btnCls = "bg-purple-600 text-white font-bold block mx-auto py-2 px-4 focus:outline-none hover:bg-purple-700 shadow transform hover:scale-105 capitalize transition duration-200 ease-in-out";
         const imgCls = "w-full object-cover";
         const imgContainerCls = "w-full shadow overflow-hidden cursor-pointer transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg";
-        const modalCls = "fixed top-1/2 transform -translate-y-1/2 left-1/2 -translate-x-1/2 w-screen h-screen overflow-hidden bg-black bg-opacity-50 z-10 flex items-center justify-center z-10";
         const noRes = (Array.isArray(data) && data.length === 0) ? true : false;
         const modalShow = imgModal && Array.isArray(data);
         console.log()

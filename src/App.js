@@ -15,7 +15,7 @@ function App() {
         {/* <Form /> */}
         {/* <FormPeople /> */}
       {/* </header> */}
-      <PhotoSearch/>
+      <PhotoSearch/>  
     </div>
   );
 }

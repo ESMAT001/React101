@@ -1,5 +1,4 @@
 import React from 'react';
-
 function Modal({ closeModal, src, alt }) {
     const modalCls = "fixed  top-1/2 transform -translate-y-1/2 left-1/2 -translate-x-1/2 w-screen h-screen overflow-hidden bg-black bg-opacity-50 z-10 flex items-center justify-center z-10";
     return (
