@@ -3,7 +3,8 @@
 // import Counter from './components/Counter';
 // import Form from './components/Form';
 // import FormPeople from './components/FormPeople';
-import PhotoSearch from './components/PhotoSearch';
+// import PhotoSearch from './components/PhotoSearch';
+import HookCounter from "./components/HookCounter";
 
 function App() {
   const cls="bg-gray-100"
@@ -15,7 +16,8 @@ function App() {
         {/* <Form /> */}
         {/* <FormPeople /> */}
       {/* </header> */}
-      <PhotoSearch/>  
+      {/* <PhotoSearch/> */}
+      <HookCounter/>
     </div>
   );
 }
