@@ -36,7 +36,8 @@ export class Photos extends Component {
             <>
                 {modalShow && <Modal
                     closeModal={this.closeModal}
-                    src={data[imgIndex].largeImageURL}
+                    src={data[imgIndex].webformatURL}
+                    downloadLink={data[imgIndex].largeImageURL}
                     alt={data[imgIndex].tags}
                 />
                 }
